@@ -1,5 +1,7 @@
 # Pied-Piper_KU-Hackfest
 
+Due to the COVID-19 pandemic, doctors are busy handling it and other major diseases are unintentionally being ignored because of the crowd in hospitals. This AI-based diagnosis system is capable to diagnose heart failure with an accuracy of 84% and 95% in case of stroke detection using BMI, mainly.
+
 ### Installation
 
 pip install -r requirements.txt
