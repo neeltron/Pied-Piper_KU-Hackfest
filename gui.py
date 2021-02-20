@@ -2,10 +2,24 @@ from tkinter import *
 from tkinter import messagebox
 import tkinter.font as tkFont
 from PIL import ImageTk, Image
+from pandas import Series, DataFrame
+import pandas as pd
+import numpy as np
+import matplotlib.pylab as plt
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import classification_report
+import sklearn.metrics
+from sklearn import datasets
+from sklearn.ensemble import ExtraTreesClassifier
+from sklearn.ensemble import RandomForestClassifier
+import os
+
+
 
 root = Tk()
 root["bg"]="#121212"
-root.title("KU-Hackfest")
+root.title("AI Based Diagnosis App")
 
 fontStyle = tkFont.Font(family="times new roman", size=15,weight="bold")
 fontStyle_label = tkFont.Font(family="times new roman",size=12)
@@ -29,7 +43,8 @@ e11 = Entry()
 e12 = Entry()
 
 # Creating labels and pushing entries
-items=[("label1",e1),("label2",e2),("label3",e3),("label4",e4),("label5",e5),("label6",e6),("label7",e7),("label8",e8),("label9",e9),("label10",e10),("label11",e11),("label12",e12)]
+items=[("Age",e1),("Sex",e2),("Anaemia(1 - Yes | 0 - No)",e3),("Diabetes(1 - Yes | 0 - No)",e4),("High BP(1 - Yes | 0 - No)",e5),("Sex(2 - Other | 1 - Male | 0 - Female)",e6),("Smoker? (1 - Yes | 0 - No)",e7),("Time since last visit (days)",e8),("label9",e9),("label10",e10),("label11",e11),("label12",e12)]
+
 
 for index,(lbl,e) in enumerate(items):
     Label(root,text=lbl,bg="#121212",fg="#cfe2f3",font=fontStyle_label).grid(row=index+1,column=0,pady=10,padx=(1,30))
